@@ -11,8 +11,9 @@ __Stay calm and code on!__
 
 **Doctors APPointment** is an app where a user can schedule an appointment with a doctor without logging in or registering. The doctor can then log in and view all of their appointments. The Doctor should be able to READ, UPDATE, & DELETE appointments.
 
-Your app should use `pg` and `knex`, and your schema should be built
-using `migrations`.
+Your schema should be built using `migrations`.
+
+In order to submit it please **fork & clone** this repository and slack it the finished version to your instructor before the allocated time frame completes. 
 
 
 # Use the following User stories to guide your development:
