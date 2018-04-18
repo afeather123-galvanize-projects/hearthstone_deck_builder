@@ -13,7 +13,7 @@ __Stay calm and code on!__
 
 Your schema should be built using `migrations`.
 
-In order to submit it please **fork & clone** this repository and slack it the finished version to your instructor before the allocated time frame completes. 
+In order to submit it please **fork & clone** this repository and slack it the finished version to your instructor before the allocated time frame completes.
 
 
 # Use the following User stories to guide your development:
