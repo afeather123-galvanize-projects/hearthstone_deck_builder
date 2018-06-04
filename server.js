@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 require('./config/sessions')(app);
 
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 var routes_setter = require('./config/routes.js');
 routes_setter(app);
