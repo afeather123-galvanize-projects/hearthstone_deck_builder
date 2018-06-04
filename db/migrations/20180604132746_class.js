@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('class', (t)=>{
-    t.increments('id').primary();
+    t.increments();
     t.string('class_name');
     t.timestamps(true, true);
 })

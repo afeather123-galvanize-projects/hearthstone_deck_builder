@@ -1,7 +1,7 @@
-//Update the name of the controller below and rename the file.
-const template = require("../controllers/template.js")
-module.exports = function(app){
+const user = require("../controllers/user.js")
+const deck = require('../controllers/deck.js')
+const card = require("../controllers/card.js")
 
-  app.get('/', template.index);
-  app.post('/createname', template.createName);
+module.exports = function(app){
+  app.get('/', deck.index);
 }

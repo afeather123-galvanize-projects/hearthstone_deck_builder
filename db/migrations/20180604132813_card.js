@@ -4,11 +4,15 @@ exports.up = function(knex, Promise) {
     t.increments('id').primary();
     t.string('type');
     t.integer('attack');
-    t.integer('defence');
-    t.integer('mana');
     t.integer('health');
-    t.string('card_id');
-    t.string('class_id');
+    t.integer('mana');
+    t.text('description')
+    t.integer('class_id')
+      .notNullable()
+      .references('id')
+      .inTable('class')
+      .onDelete('CASCADE')
+      .index();
     t.timestamps(true, true);
 })
 };
