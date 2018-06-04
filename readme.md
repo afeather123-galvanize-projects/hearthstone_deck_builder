@@ -19,6 +19,8 @@ In order to submit it please **fork & clone** this repository and slack it the f
 # Use the following User stories to guide your development:
 __You should git add, commit, and push after each story is completed__
 
+*NOTE* - Please note that all the routes listed below (ex `/appointments/confirmed`) are just suggestions and you can structure your routes however you would like.
+
 ### Appointment Creation
 
 __#1__
@@ -105,14 +107,14 @@ __#2__
 ```
 As a Doctor
 When I click the "unconfirmed appointments" link
-I should be redirected to /unconfirmed_appointments.
+I should be redirected to /appointments/unconfirmed.
 ```
 
 __#3__
 ```
 As a Doctor
 When I click the "completed appointments" link
-I should be redirected to /completed_appointments.
+I should be redirected to /appointments/completed.
 ```
 
 __#4__
