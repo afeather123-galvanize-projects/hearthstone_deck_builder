@@ -2,16 +2,6 @@ This is the hearthstone_deck_builder app!!!!
 
 # Render Routes
 
-deck.js controller:
-- '/' - index.ejs
-- '/deck_builder/:class_id' - deck_builder.ejs
-- '/decks/:id' - deck.ejs
-
-user.js controller:
-- '/login' - login-register.ejs
-- '/profile' - profile.ejs
-- '/users/:id' - user.ejs
-
 card.js controller:
 - '/cards/:id' - card.ejs
 
