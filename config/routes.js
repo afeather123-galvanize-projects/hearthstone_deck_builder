@@ -9,5 +9,4 @@ module.exports = function(app){
   app.post('/register', user.register);
   app.post('/card/:id',card.createCard);
   app.get('/card/:id',card.show);
-  app.post('/card/:id',card.cardComment);
 }

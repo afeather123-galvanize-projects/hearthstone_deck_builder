@@ -1,1 +1,5 @@
 @import "master.css";
+
+.cardComment{
+  border: 1px solid black;
+}
