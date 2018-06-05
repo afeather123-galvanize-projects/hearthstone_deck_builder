@@ -8,8 +8,14 @@ exports.up = function(knex, Promise) {
       .inTable('user')
       .onDelete('CASCADE')
       .index();
+    t.integer('class_id')
+      .notNullable()
+      .references('id')
+      .inTable('class')
+      .onDelete('CASCADE')
+      .index();
     t.string('deck_name');
-    t.string('desc');
+    t.text('desc');
     t.timestamps(true, true);
 })
 };
