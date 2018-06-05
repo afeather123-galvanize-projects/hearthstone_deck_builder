@@ -5,7 +5,7 @@ module.exports = {
       res.render('card');
 
     },
-    createCard (req, res)=>{
+    createCard: (req, res)=>{
       knex('card').insert({
         type:req.body.type,
         attack:req.body.attack,
