@@ -4,4 +4,8 @@ const card = require("../controllers/card.js")
 
 module.exports = function(app){
   app.get('/', deck.index);
+  app.post('/login', user.login);
+app.post('/register', user.register);
+app.post('/card/:id',card.createCard);
+app.post('/card/:id',card.show);
 }
