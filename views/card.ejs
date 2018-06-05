@@ -13,7 +13,7 @@
 
     <div class="card">
 
-      <img src="<%=card.img%>" alt="">
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-src="<%=card.img%>" alt="">
       <h1><%=card.name%></h1>
       <h3><%=card.type%></h3>
       <h3><%=card.attack%></h3>
@@ -25,5 +25,24 @@
 
 </div>
 </div>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+<script>
+     var bLazy = new Blazy({
+        breakpoints: [{
+	    width: 420 // Max-width
+          , src: 'data-src'
+	}]
+      , success: function(element){
+	    setTimeout(function(){
+		// We want to remove the loader gif now.
+		// First we find the parent container
+		// then we remove the "loading" class which holds the loader image
+		var parent = element.parentNode;
+		parent.className = parent.className.replace(/\bloading\b/,'');
+	    }, 200);
+        }
+   });
+</script>
 
 <% include ./partials/footer %>

@@ -29,7 +29,7 @@ exports.seed = function(knex, Promise) {
               new_card.health = card.durability;
             }
             if(card.text) {
-              new_card.description = card.text;
+              new_card.description = card.text.replace(/\n/g, "<br />");
             } else {
               new_card.description = '';
             }
