@@ -2,7 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     login_register: (req,res) => {
-
+      res.render('/login')
     },
 
     login: (req, res)=>{
