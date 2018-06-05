@@ -13,7 +13,10 @@
       <h3><%=card.description%></h3>
 
 <div class="cardComment">
-
+<% card_comments.forEach(comment => {%>
+<h4><%=comment.username%></h4>
+<p><%=comment.comment%></p>
+<%})%>
 </div>
 </div>
 
