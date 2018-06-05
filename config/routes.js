@@ -8,5 +8,5 @@ module.exports = function(app){
   app.get('/login', user.login_register);
   app.post('/register', user.register);
   app.post('/card/:id',card.createCard);
-  app.post('/card/:id',card.show);
+  app.get('/card/:id',card.show);
 }

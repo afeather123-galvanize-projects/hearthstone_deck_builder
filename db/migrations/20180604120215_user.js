@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     t.string('email')
       .unique();
     t.string('password');
+    t.boolean('isAdmin');
     t.timestamps(true, true);
 })
 };

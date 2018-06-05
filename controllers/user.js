@@ -22,11 +22,10 @@ module.exports = {
   register: (req, res) => {
     if(req.body.password == req.body.confirm) {
       knex("user").insert({
-        name: req.body.name,
+      username: req.body.username,
       email: req.body.email,
-      bio:req.body.bio,
-      img_url:req.body.img_url,
-      password: req.body.password
+      password: req.body.password,
+      isAdmin: false
       }).then(() => {
         res.redirect('/')
 
@@ -34,9 +33,6 @@ module.exports = {
     }else{
     res.redirect('/')
     }
-  },
-    admin: (req,res) => {
-
-    }
+  }
 
 }

@@ -1,28 +1,20 @@
 <!-- /cards/:id -->
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="card">
-      <% for(let i =0; i<card.length; i++){%>
+<% include ./partials/header %>
 
-      <img src="" alt="">
-      <h3>card[i].type</h3>
-      <h3>card[i].attack</h3>
-      <h3>card[i].health</h3>
-      <h3>card[i].mana</h3>
-      <h3>card[i].description</h3>
+    <div class="card">
+
+      <img src="<%=card.img%>" alt="">
+      <h1><%=card.name%></h1>
+      <h3><%=card.type%></h3>
+      <h3><%=card.attack%></h3>
+      <h3><%=card.health%></h3>
+      <h3><%=card.mana%></h3>
+      <h3><%=card.description%></h3>
 
 <div class="cardComment">
-  <textarea class="name" rows="8" cols="80" "/<%=card[i].comment%>">Enter a comment</textarea>
-
 
 </div>
-<%}%>
 </div>
-  </body>
-</html>
+
+<% include ./partials/footer %>
