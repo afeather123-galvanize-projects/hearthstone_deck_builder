@@ -19,7 +19,8 @@
       <h3><%=card.attack%></h3>
       <h3><%=card.health%></h3>
       <h3><%=card.mana%></h3>
-      <h3><%=card.description%></h3>
+<% let desc = card.description%>
+      <p><%- desc %> </p> 
 
 <div class="cardComment">
 <% card_comments.forEach(comment => {%>
