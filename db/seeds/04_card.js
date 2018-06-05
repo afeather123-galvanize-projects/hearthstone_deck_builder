@@ -61,7 +61,6 @@ exports.seed = function(knex, Promise) {
             cards.push(new_card);
           }
         }
-        console.log(cards.splice(0,5));
         return knex('card').insert(cards);
       })
     });
