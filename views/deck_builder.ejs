@@ -2,67 +2,47 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<<<<<<< HEAD
-
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/deck_builder.css">
-  <title>Hearthstone Deck Builder</title>
-</head>
-
-<body>
-
-=======
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/deck_builder.css">
     <title>Hearthstone Deck Builder</title>
+    <link rel="stylesheet" href="/css/imageGallery.css">
   </head>
-  <link rel="stylesheet" href="/css/imageGallery.css">
-  <script type="text/javascript" href="/css/slide.js">
     
-  </script>
   <body>
 <h2 text-align:canter>Deck Bulider</h2>
 
 <div class="slideshow-container">
   
   <%for(let i = 0; i < cards.length; i+=6){%>
-  <div class="myslids1">
-    <%for(let j = i; j<i+6;j++){%>
-      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[i].id%>" data-src="<%=cards[i].img%>" alt="">
+  <div class="mySlides1">
+    <%for(let j = i; j < i+6 && j < cards.length ;j++){%>
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[j].id%>" data-src="<%=cards[j].img%>" alt="">
     <%}%>
   </div>
   <%}%>
 </div>
-    
-    <!-- <% for(let i = 0;i < deck.length; i++){ %>
-
-<div class="deck">
-<a href="/deck/deck_builder" "<=%deck[i].deck_name%>"></a>
-</div>
-    <%}%> -->
->>>>>>> 41045dfb12e08d10528404c82e42f70ba303cadc
 
   <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-      <script>
-        var bLazy = new Blazy({
-          breakpoints: [{
-            width: 420 // Max-width
-              ,
-            src: 'data-src'
-          }],
-          success: function (element) {
-            setTimeout(function () {
-              // We want to remove the loader gif now.
-              // First we find the parent container
-              // then we remove the "loading" class which holds the loader image
-              var parent = element.parentNode;
-              parent.className = parent.className.replace(/\bloading\b/, '');
-            }, 200);
-          }
-        });
-      </script>
+    <script>
+      var bLazy = new Blazy({
+        breakpoints: [{
+          width: 420 // Max-width
+            ,
+          src: 'data-src'
+        }],
+        success: function (element) {
+          setTimeout(function () {
+            // We want to remove the loader gif now.
+            // First we find the parent container
+            // then we remove the "loading" class which holds the loader image
+            var parent = element.parentNode;
+            parent.className = parent.className.replace(/\bloading\b/, '');
+          }, 200);
+        }
+      });
+    </script>
+    <script type="text/javascript" src="/slide.js"></script>
 </body>
 
 </html>

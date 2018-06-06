@@ -9,7 +9,6 @@ module.exports = {
     },
 
     deck_builder: (req,res) => {
-<<<<<<< HEAD
       knex('card')
       .where('class_id', req.params.id)
       .orWhere('class_id', 1)
@@ -17,11 +16,6 @@ module.exports = {
       .then(cards => {
         res.render('deck_builder', {cards: cards})
       })
-=======
-      // knex('cards').where('id').then(card =>{
-      //   res.render('deck_builder');
-      // })
->>>>>>> 41045dfb12e08d10528404c82e42f70ba303cadc
     },
 
     show: (req,res) => {
