@@ -22,7 +22,7 @@
           </div>
         <%})%>
     </div>
-    
+
     <div class="commentsSection">
       <%comments.forEach(comment => {%>
         <h4><%=comment.username%></h4>
@@ -30,6 +30,10 @@
       <%})%>
     </div>
     
+    <form action="/deck_comment/<%=deck.id%>">
+      <textarea name="comment" id="" cols="30" rows="10"></textarea>
+      <button>Submit</button>
+    </form>
     
   </body>
 </html>
