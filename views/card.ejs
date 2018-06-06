@@ -6,36 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/card.css">
-    <title>Document</title>
+    <title>Hearthstone Deck Builder</title>
 </head>
 <body>
-<% include ./partials/header %>
+    <% include ./partials/header %>
+    <div class="bannerBorder">
+      <div class="dropdown">
+      <span>Card Class</span>
+      <div class="dropdown-content">
+        <a class="dropdownLinks" href="/deckbuilder/2">Druid</a>
+        <a class="dropdownLinks" href="/deckbuilder/3">Hunter</a>
+        <a class="dropdownLinks" href="/deckbuilder/4">Mage</a>
+        <a class="dropdownLinks" href="/deckbuilder/5">Paladin</a>
+        <a class="dropdownLinks" href="/deckbuilder/6">Priest</a>
+        <a class="dropdownLinks" href="/deckbuilder/7">Rogue</a>
+        <a class="dropdownLinks" href="/deckbuilder/8">Shaman</a>
+        <a class="dropdownLinks" href="/deckbuilder/9">Warlock</a>
+        <a class="dropdownLinks" href="/deckbuilder/10">Warrior</a>
+      </div>
+      </div>
+    </div><!--bannerBorder-->
 
-    <div class="card">
+  <div class="pageWrapper">
 
+  <div class="leftDiv">
+    <div class="cardDiv">
       <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-src="<%=card.img%>" alt="">
-      <h1><%=card.name%></h1>
-      <h3><%=card.type%></h3>
-      <h3><%=card.attack%></h3>
-      <h3><%=card.health%></h3>
-      <h3><%=card.mana%></h3>
-<% let desc = card.description%>
-      <p><%- desc %> </p> 
+    </div><!--cardDiv-->
+  </div><!--leftDiv-->
+
+  <div class="rightDiv">
+    <div class="cardInfoDiv">
+      <h1>Card Name: <%=card.name%></h1>
+      <h3>Card Type: <%=card.type%></h3>
+      <h3>Attack Power: <%=card.attack%></h3>
+      <h3>Health: <%=card.health%></h3>
+      <h3>Mana: <%=card.mana%></h3>
+    <% let desc = card.description%>
+      <h3>Card Description:</h3>
+      <p><%- desc %> </p>
+
+      <% card_comments.forEach(comment => {%>
+        <div class="cardComment">
+          <h4><%=comment.username%></h4>
+          <p><%=comment.comment%></p>
+        </div>
+      <%})%>
+
+      <form action="/card_comment/<%=card.id%>" method="POST">
+          <textarea name="comment" id="" cols="60" rows="8"></textarea><br>
+          <button>Submit</button>
+      </form>
+
+    </div><!--cardInfoDiv-->
+  </div><!--rightDiv-->
 
 
-<% card_comments.forEach(comment => {%>
-    <div class="cardComment">
-<h4><%=comment.username%></h4>
-<p><%=comment.comment%></p>
-</div>
-<%})%>
-</div>
-
-
-<form action="/card_comment/<%=card.id%>" method="POST">
-    <textarea name="comment" id="" cols="30" rows="10"></textarea>
-    <button>Submit</button>
-</form>
+</div><!--pageWrapper-->
 
 <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
 <script>
