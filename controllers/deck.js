@@ -3,6 +3,8 @@ const knex = require('../db/knex');
 module.exports = {
     index: (req,res) => {
       knex('deck')
+      .select('deck.deck_name', 'deck.desc', 'deck.id AS deck_id', 'class.class_name')
+      .join('class','deck.class_id', 'class.id')
         .then(decks=>{
           res.render('index',{decks:decks});
         });
