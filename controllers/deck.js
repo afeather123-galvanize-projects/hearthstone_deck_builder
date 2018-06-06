@@ -35,5 +35,19 @@ module.exports = {
           })
         })
       })
+    },
+
+    comment_on_deck: (req, res) => {
+      let new_comment = {
+        user_id: req.session.user_id,
+        deck_id: req.params.id,
+        comment: req.body.comment
+      };
+      knex('deck_comment')
+      .insert(new_comment)
+      .then(() => {
+        console.log('getting here?');
+        res.redirect('/deck/' + req.params.id);
+      })
     }
 }
