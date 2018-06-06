@@ -23,9 +23,11 @@
     
     
     <div class="deck">  
-      <h1><a class="deckI" href="/deck/<%=decks[i].deck_id%>"><%=decks[i].deck_name%></a></h1>
-      
-        <h5><%= decks[i].desc%></h5>
+      <h3><a class="deckI" href="/deck/<%=decks[i].deck_id%>"><img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" alt=""><%decks[i].deck_name%></a></h3>
+      <!-- <div class="desc_background">
+        <h5 class="desc_landing"><%= decks[i].desc%></h5>
+      </div>
+         -->
     </div>
     <%}%>
     <!--deck-->

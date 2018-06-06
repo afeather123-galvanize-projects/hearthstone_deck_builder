@@ -46,16 +46,25 @@ h3 {
 }
 
 .deck{ 
+  /* background-image: url("https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png"); */
+  /* background-image: url("https://pre00.deviantart.net/c37a/th/pre/i/2014/079/c/8/hearthstone_card_back_fan_art_by_d1eselxxxx-d7axngs.jpg"); */
+  background-repeat: no-repeat;
   margin: 0 auto;
-  width: 350px;
-  border: 1px solid black;
+  margin-top: 15px;
+  width: 230px;
+  height: 325px;
   padding: 35px;
 }
 
 .deckI{
-  border: 1px solid black;
-  width:230px;
-  margin: 45px;
+  width:180px;
+  margin: 15px;
   float:left;
   color:gray;
+  padding-bottom:70px;
+}
+
+.desc_background{
+  /* background: rgba(0, 0, 0, 0.3); */
+color: #f1f1f1;
 }
