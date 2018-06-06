@@ -13,11 +13,12 @@
       <h1><%=deck.deck_name%></h1>
       <p><%=deck.desc%></p>
     </div>
+    <%console.log(cards)%>
     <div class="deck_list">
         <% cards.forEach(card => { %>
           <div>
-            <span><%=card.mana%></span>
-            <a class="card" href="/card/<%=card.id%>"><%=card.name%></a> 
+            <span>Mana: <%=card.mana%></span>
+            <a class="card" href="/card/<%=card.id%>"><%=card.name%></a>
             <span><%=card.qty%></span>
           </div>
         <%})%>
@@ -29,11 +30,11 @@
         <p><%=comment.comment%></p>
       <%})%>
     </div>
-    
+
     <form action="/deck_comment/<%=deck.id%>" method="POST">
       <textarea name="comment" id="" cols="30" rows="10"></textarea>
       <button>Submit</button>
     </form>
-    
+
   </body>
 </html>

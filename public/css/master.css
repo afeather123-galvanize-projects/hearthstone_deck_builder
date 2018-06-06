@@ -30,7 +30,7 @@ body {
   position: relative;
   max-width: 80%;
 }
-a {
+.nav {
   text-decoration: none;
   float: right;
   padding-right: 25px;
