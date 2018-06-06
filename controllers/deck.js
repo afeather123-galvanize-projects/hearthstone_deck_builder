@@ -22,6 +22,11 @@ module.exports = {
       })
     },
 
+    create_deck: (req,res) => {
+      console.log(req.body);
+      res.redirect('back');
+    },
+
     show: (req,res) => {
       knex('deck')
       .where('id', req.params.id)

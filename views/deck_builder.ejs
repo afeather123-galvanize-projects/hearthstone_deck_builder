@@ -101,6 +101,32 @@
         deck_name: document.getElementById('deck_name_input').value,
         desc: document.getElementById('description_input').value
       }
+      let formattedList = [];
+      let keys = Object.keys(list);
+      keys.forEach(key => {
+        if(list[key].qty && list[key].qty > 0) {
+          let card_info = {
+            card_id: Number(key),
+            qty: list[key].qty
+          }
+          formattedList.push(card_info);
+        }
+      })
+      deck_info.list = formattedList;
+      fetch("/create_deck", {
+       method: 'post',
+       headers: {
+        'Accept': 'application/json',
+         "Content-type": "application/json"
+       },
+       body: JSON.stringify(deck_info)
+      })
+      .then(function(data) {
+        console.log('Request succeeded with JSON response', data);
+      })
+      .catch(function(error) {
+        console.log('Request failed', error);
+      });
   })
 </script>
 <script type="text/javascript" src="/slide.js"></script>
