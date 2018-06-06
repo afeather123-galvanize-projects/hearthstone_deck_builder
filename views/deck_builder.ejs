@@ -2,21 +2,39 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/deck_builder.css">
-    <title>Hearthstone Deck Builder</title>
-  </head>
-  <body>
 
-    
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/deck_builder.css">
+  <title>Hearthstone Deck Builder</title>
+</head>
 
-    <% for(let i = 0;i < deck.length; i++){ %>
+<body>
 
-<div class="deck">
-<a href="/deck/deck_builder" "<=%deck[i].deck_name%>"></a>
-</div>
-    <%}%>
 
-  </body>
+
+  <% for(let i = 0;i < cards.length; i++){ %>
+    <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-src="<%=cards[i].img%>" alt="">
+  <%}%>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+      <script>
+        var bLazy = new Blazy({
+          breakpoints: [{
+            width: 420 // Max-width
+              ,
+            src: 'data-src'
+          }],
+          success: function (element) {
+            setTimeout(function () {
+              // We want to remove the loader gif now.
+              // First we find the parent container
+              // then we remove the "loading" class which holds the loader image
+              var parent = element.parentNode;
+              parent.className = parent.className.replace(/\bloading\b/, '');
+            }, 200);
+          }
+        });
+      </script>
+</body>
+
 </html>

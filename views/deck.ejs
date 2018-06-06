@@ -23,6 +23,13 @@
         <%})%>
     </div>
     
+    <div class="commentsSection">
+      <%comments.forEach(comment => {%>
+        <h4><%=comment.username%></h4>
+        <p><%=comment.comment%></p>
+      <%})%>
+    </div>
+    
     
   </body>
 </html>
