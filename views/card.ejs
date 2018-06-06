@@ -22,13 +22,15 @@
 <% let desc = card.description%>
       <p><%- desc %> </p> 
 
-<div class="cardComment">
+
 <% card_comments.forEach(comment => {%>
+    <div class="cardComment">
 <h4><%=comment.username%></h4>
 <p><%=comment.comment%></p>
+</div>
 <%})%>
 </div>
-</div>
+
 
 <form action="/card_comment/<%=card.id%>" method="POST">
     <textarea name="comment" id="" cols="30" rows="10"></textarea>

@@ -4,10 +4,11 @@ module.exports = {
   // show card
     show: (req,res) => {
       knex('card').where('id', req.params.id).then(card => {
-        knex('card_comment').where('card_comment.id', req.params.id)
+        knex('card_comment').where('card_comment.card_id', req.params.id)
         .join('user', 'card_comment.user_id', 'user.id')
-        .then(comment =>{
-          res.render('card', {card: card[0], card_comments:comment});
+        .then(comments =>{
+
+          res.render('card', {card: card[0], card_comments:comments});
         })
       })
     },
@@ -25,9 +26,6 @@ module.exports = {
     },
     //
     comment_on_card: (req, res) => {
-      if(!req.session.user_id) {
-        res.redirect('/card/' + req.params.id);
-      }
       let new_comment = {
         user_id: req.session.user_id,
         card_id: req.params.id,
@@ -36,6 +34,7 @@ module.exports = {
       knex('card_comment')
       .insert(new_comment)
       .then(() => {
+        console.log('getting here?');
         res.redirect('/card/' + req.params.id);
       })
     }
