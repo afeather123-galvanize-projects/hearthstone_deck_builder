@@ -39,6 +39,12 @@
 <div id="decklist">
 </div>
 
+<form action="/create_deck" id="submitDeck">
+  <input type="text" name="deck_name">
+  <textarea name="desc" id="" cols="30" rows="10"></textarea>
+  <button>Submit</button>
+</form>
+
 <script>
   var decklist = document.getElementById('decklist');
   var list = {};
