@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="/css/deck_builder.css">
     <title>Hearthstone Deck Builder</title>
   </head>
-  <body>
-
+  <link rel="stylesheet" href="/css/imageGallery.css">
+  <script type="text/javascript" href="/css/slide.js">
     
+  </script>
+  <body>
+<h2 text-align:canter>Deck Bulider</h2>
 
-    <% for(let i = 0;i < deck.length; i++){ %>
+<div class="slideshow-container">
+  
+  <%for(let i = 0; i <cards.length;i+=6){%>
+  <div class="myslids1">
+    <%for(let j = 0; j<i+6;i++){%>
+      <img src="<%=cards[j]%>">
+    <%}%>
+  </div>
+  <%}%>
+</div>
+    
+    <!-- <% for(let i = 0;i < deck.length; i++){ %>
 
 <div class="deck">
 <a href="/deck/deck_builder" "<=%deck[i].deck_name%>"></a>
 </div>
-    <%}%>
+    <%}%> -->
 
   </body>
 </html>

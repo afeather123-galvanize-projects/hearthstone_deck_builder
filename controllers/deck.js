@@ -9,7 +9,9 @@ module.exports = {
     },
 
     deck_builder: (req,res) => {
-
+      // knex('cards').where('id').then(card =>{
+      //   res.render('deck_builder');
+      // })
     },
 
     show: (req,res) => {
