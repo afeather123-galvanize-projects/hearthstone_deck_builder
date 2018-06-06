@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<<<<<<< HEAD
 
 <head>
   <meta charset="utf-8">
@@ -11,11 +12,38 @@
 
 <body>
 
+=======
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/deck_builder.css">
+    <title>Hearthstone Deck Builder</title>
+  </head>
+  <link rel="stylesheet" href="/css/imageGallery.css">
+  <script type="text/javascript" href="/css/slide.js">
+    
+  </script>
+  <body>
+<h2 text-align:canter>Deck Bulider</h2>
 
-
-  <% for(let i = 0;i < cards.length; i++){ %>
-    <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[i].id%>" data-src="<%=cards[i].img%>" alt="">
+<div class="slideshow-container">
+  
+  <%for(let i = 0; i < cards.length; i+=6){%>
+  <div class="myslids1">
+    <%for(let j = i; j<i+6;j++){%>
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[i].id%>" data-src="<%=cards[i].img%>" alt="">
+    <%}%>
+  </div>
   <%}%>
+</div>
+    
+    <!-- <% for(let i = 0;i < deck.length; i++){ %>
+
+<div class="deck">
+<a href="/deck/deck_builder" "<=%deck[i].deck_name%>"></a>
+</div>
+    <%}%> -->
+>>>>>>> 41045dfb12e08d10528404c82e42f70ba303cadc
+
   <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
       <script>
         var bLazy = new Blazy({
