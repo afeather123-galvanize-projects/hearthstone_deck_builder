@@ -30,7 +30,7 @@ body {
   position: relative;
   max-width: 80%;
 }
-a {
+.nav {
   text-decoration: none;
   float: right;
   padding-right: 25px;
@@ -43,4 +43,19 @@ h1 {
 }
 h3 {
   font-size: 1.5em;
+}
+
+.deck{ 
+  margin: 0 auto;
+  width: 350px;
+  border: 1px solid black;
+  padding: 35px;
+}
+
+.deckI{
+  border: 1px solid black;
+  width:230px;
+  margin: 45px;
+  float:left;
+  color:gray;
 }
