@@ -10,4 +10,5 @@ module.exports = function(app){
   app.post('/card/:id',card.createCard);
   app.get('/card/:id',card.show);
   app.get('/deck/:id', deck.show);
+  app.post('/card/:id', card.comment_on_card);
 }

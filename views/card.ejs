@@ -30,6 +30,11 @@
 </div>
 </div>
 
+<form action="/cards/<%=card.id%>" method="POST">
+    <textarea name="comment" id="" cols="30" rows="10"></textarea>
+    <button>Submit</button>
+</form>
+
 <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
 <script>
      var bLazy = new Blazy({
