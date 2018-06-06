@@ -16,13 +16,23 @@
   
   <%for(let i = 0; i < cards.length; i+=6){%>
   <div class="mySlides1">
+    <a class="prev" onclick="plusSlides(-1,1)" ><img src="/img/arrowprev.png"></a>
+  
     <%for(let j = i; j < i+6 && j < cards.length ;j++){%>
+    
+    
       <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[j].id%>" data-src="<%=cards[j].img%>" alt="">
+      
+      
     <%}%>
+    
+    
+    <a class="next" onclick="plusSlides(1,1)" ><img src="/img/arrownext.png"></a>
   </div>
   <%}%>
 </div>
 
+<script type="text/javascript" src="/slide.js"></script>
   <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
     <script>
       var bLazy = new Blazy({
@@ -39,10 +49,10 @@
             var parent = element.parentNode;
             parent.className = parent.className.replace(/\bloading\b/, '');
           }, 200);
-        }
+        },
+        loadInvisible:true
       });
     </script>
-    <script type="text/javascript" src="/slide.js"></script>
 </body>
 
 </html>
