@@ -21,38 +21,49 @@
     <%for(let j = i; j < i+6 && j < cards.length ;j++){%>
 
 
-      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" data-cardid="<%=cards[j].id%>" data-src="<%=cards[j].img%>" alt="">
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" 
+      data-cardid="<%=cards[j].id%>"
+      data-mana="<%=cards[j].mana%>"
+      data-name="<%=cards[j].name%>"
+      data-src="<%=cards[j].img%>" alt="">
 
 
     <%}%>
 
-    <a class="prev" onclick="plusSlides(-1,1)" ><img src="/img/arrowprev.png"></a>
-    <a class="next" onclick="plusSlides(1,1)" ><img src="/img/arrownext.png"></a>
+    <a class="prev" onclick="plusSlides(-1,1)" >&#10094;</a>
+    <a class="next" onclick="plusSlides(1,1)" >&#10095;</a>
   </div>
   <%}%>
 </div>
 
+<div id="decklist">
+</div>
+
+<script>
+  var decklist = document.getElementById('decklist');
+  var cards = {};
+  var cards = document.querySelectorAll('img');
+  cards.forEach(card => {
+    card.addEventListener('click', event => {
+      const data = event.target.dataset;
+      if(!cards[data.cardid]) {
+        cards[data.cardid] = {
+          name: data.name,
+          mana: data.mana,
+          qty: 0
+        }
+      }
+      if(cards[data.cardid].qty < 2) {
+        cards[data.cardid].qty++;
+        let para = document.createElement('p');
+        let text = document.createTextNode(data.name);
+      }
+    })
+  })
+</script>
 <script type="text/javascript" src="/slide.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
-    <script>
-      var bLazy = new Blazy({
-        breakpoints: [{
-          width: 420 // Max-width
-            ,
-          src: 'data-src'
-        }],
-        success: function (element) {
-          setTimeout(function () {
-            // We want to remove the loader gif now.
-            // First we find the parent container
-            // then we remove the "loading" class which holds the loader image
-            var parent = element.parentNode;
-            parent.className = parent.className.replace(/\bloading\b/, '');
-          }, 200);
-        },
-        loadInvisible:true
-      });
-    </script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+<script type="text/javascript" src="/blazy.js"></script>
 </body>
 
 </html>

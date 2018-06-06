@@ -12,5 +12,6 @@ var bLazy = new Blazy({
         var parent = element.parentNode;
         parent.className = parent.className.replace(/\bloading\b/, '');
       }, 200);
-    }
+    },
+    loadInvisible:true
   });

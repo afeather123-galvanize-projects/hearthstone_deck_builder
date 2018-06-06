@@ -12,7 +12,9 @@ module.exports = {
       knex('card')
       .where('class_id', req.params.id)
       .orWhere('class_id', 1)
-      .select('img', 'id')
+      .select('img', 'id', 'name', 'mana')
+      .orderBy('class_id', 'desc')
+      .orderBy('mana', 'asc')
       .then(cards => {
         res.render('deck_builder', {cards: cards})
       })
