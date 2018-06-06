@@ -10,23 +10,25 @@
   </head>
 
   <body>
-<h2 text-align:canter>Deck Bulider</h2>
+    <% include ./partials/header %>
+    <div class="bannerBorder">
+    </div><!--bannerBorder-->
+
+    <div class="pageWrapper">
+    <h2>Deck Bulider</h2>
 
 <div class="slideshow-container">
 
   <%for(let i = 0; i < cards.length; i+=6){%>
   <div class="mySlides1">
 
-
     <%for(let j = i; j < i+6 && j < cards.length ;j++){%>
 
-
-      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy" 
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy"
       data-cardid="<%=cards[j].id%>"
       data-mana="<%=cards[j].mana%>"
       data-name="<%=cards[j].name%>"
       data-src="<%=cards[j].img%>" alt="">
-
 
     <%}%>
 
@@ -38,6 +40,14 @@
 
 <div id="decklist">
 </div>
+
+<form action="/create_deck" id="submitDeck">
+  <input type="text" name="deck_name" id="deck_name_input">
+  <textarea name="desc" cols="30" rows="10" id="description_input"></textarea>
+  <button>Submit</button>
+</form>
+
+</div> <!--pageWrapper-->
 
 <script>
   var decklist = document.getElementById('decklist');
@@ -80,10 +90,17 @@
             list[data.cardid].domElement.innerHTML = data.name + ' ' + list[data.cardid].qty;
           }
         }
-        
-        
       }
     })
+  })
+
+  document.getElementById('submitDeck').addEventListener('submit', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      let deck_info = {
+        deck_name: document.getElementById('deck_name_input').value,
+        desc: document.getElementById('description_input').value
+      }
   })
 </script>
 <script type="text/javascript" src="/slide.js"></script>
