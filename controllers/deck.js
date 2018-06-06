@@ -2,7 +2,13 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req,res) => {
-      res.render('index');
+      knex('deck').where('id',req.params.id).then(deck =>{
+        knex('deck_comment').where('deck_comment', req.params.id)
+        .join('user', 'deck_comment',(user.id)
+        .then(comment=>{
+          res.render('index',{deck:deck[0], deck_comment:comment});
+        })
+      })
     },
 
     deck_builder: (req,res) => {
