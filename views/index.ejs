@@ -18,10 +18,16 @@
   <div class="pageWrapper">
 
 
-
-    <div class="deck">
-      deck image here
+  <!-- deck image here -->
+  <%for(let i =0; i< decks.length;i++){%>
+    
+    
+    <div class="deck">  
+      <h1><a class="deckI" href="/deck/<%=decks[i].deck_id%>"><%=decks[i].deck_name%></a></h1>
+      
+        <h5><%= decks[i].desc%></h5>
     </div>
+    <%}%>
     <!--deck-->
 
   </div>
