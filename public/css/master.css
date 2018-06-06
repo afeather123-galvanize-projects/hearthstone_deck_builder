@@ -1,3 +1,40 @@
+@import "reset.css";
+
 body {
   background-color: #ebd4af;
+  padding-top: 100px;
+}
+.banner {
+  border: 1px solid black;
+  position: absolute;
+  background-image: url("../img/hbanner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  width: 100VW;
+  border-bottom: 1px solid black;
+}
+.bannerBorder {
+  height: 30px;
+  background-color: #7B3919;
+  width: 100VW;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+  box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+}
+.pageWrapper {
+  margin: 0 auto;
+  position: relative;
+  max-width: 80%;
+}
+a {
+  text-decoration: none;
+  float: right;
+  padding-right: 25px;
+  color: white;
+  padding-top: 5px;
+  font-size: 1.2em;
 }
