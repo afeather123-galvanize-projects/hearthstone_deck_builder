@@ -40,8 +40,8 @@
 </div>
 
 <form action="/create_deck" id="submitDeck">
-  <input type="text" name="deck_name">
-  <textarea name="desc" id="" cols="30" rows="10"></textarea>
+  <input type="text" name="deck_name" id="deck_name_input">
+  <textarea name="desc" cols="30" rows="10" id="description_input"></textarea>
   <button>Submit</button>
 </form>
 
@@ -86,10 +86,17 @@
             list[data.cardid].domElement.innerHTML = data.name + ' ' + list[data.cardid].qty;
           }
         }
-        
-        
       }
     })
+  })
+
+  document.getElementById('submitDeck').addEventListener('submit', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      let deck_info = {
+        deck_name: document.getElementById('deck_name_input').value,
+        desc: document.getElementById('description_input').value
+      }
   })
 </script>
 <script type="text/javascript" src="/slide.js"></script>
