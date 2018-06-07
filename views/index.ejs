@@ -17,23 +17,31 @@
 
   <div class="pageWrapper">
 
+<div class="pageTitle">
+  <h1 class="pageTitleH1">Latest Decks:</h1>
+</div>
 
+<div class="deckRow">
   <!-- deck image here -->
   <%for(let i =0; i< decks.length;i++){%>
-    
-    <h1 class="deck_name"><%=decks[i].deck_name%></h1>  
-    <div class="deck">  
-      
-      <a class="deckI" href="/deck/<%=decks[i].deck_id%>"><img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png"  alt=""></a>
-      <!-- <div class="desc_background">
-        <h5 class="desc_landing"><%= decks[i].desc%></h5>
-      </div>
-         -->
-         
-    </div>
-  
-    <%}%>
-    <!--deck-->
+
+    <div class="deckDiv">
+      <h1 class="deck_name"><%=decks[i].deck_name%></h1>
+      <div class="deck">
+        <a class="deckI" href="/deck/<%=decks[i].deck_id%>"><img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" alt=""></a>
+
+        <!-- <div class="desc_background">
+          <p class="desc_landing"><%= decks[i].desc%></p>
+        </div> -->
+
+      </div><!--deck-->
+    </div><!--deckDiv-->
+
+
+      <%}%>
+      <!--deck-->
+  </div><!--deckRow-->
+
 
   </div>
   <!--wrapper-->
