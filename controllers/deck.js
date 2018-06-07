@@ -44,7 +44,7 @@ module.exports = {
           .where('deck_id', req.params.id)
           .join('card', 'card.id', 'deck_card.card_id')
           .then(deck_cards => {
-            res.render('edit_deck', {cards: cards, class_id: req.params.id, deck_cards: deck_cards})
+            res.render('edit_deck', {cards: cards, class_id: req.params.id, deck_cards: deck_cards, deck_id: req.params.id})
           })
         })
       })
@@ -79,7 +79,26 @@ module.exports = {
     update_deck: (req,res) => {
       knex('deck_card')
       .delete()
-      .where('deck_id', )
+      .where('deck_id', req.params.id)
+      .then(() => {
+        req.body.list.forEach(card => {
+          card.deck_id = req.params.id
+        })
+        knex('deck_card')
+        .insert(req.body.list)
+        .then(() => {
+          const update_info = {
+            deck_name: req.body.deck_name,
+            desc: req.body.desc
+          }
+          knex('deck')
+          .update(update_info)
+          .where('id', req.params.id)
+          .then(() => {
+            res.redirect(`/deck/${req.params.id}`)
+          })
+        })
+      })
     },
 
     show: (req,res) => {
@@ -90,6 +109,8 @@ module.exports = {
         knex('deck_card')
         .where('deck_card.deck_id', req.params.id)
         .join('card', 'deck_card.card_id', 'card.id')
+        .orderBy('card.mana', 'asc')
+        .orderBy('card.name', 'asc')
         .then(cards => {
           knex('deck_comment')
           .where('deck_id', req.params.id)

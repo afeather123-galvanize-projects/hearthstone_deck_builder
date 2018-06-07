@@ -18,7 +18,7 @@ document.getElementById('submitDeck').addEventListener('submit', event => {
         }
     })
     deck_info.list = formattedList;
-    fetch("/create_deck", {
+    fetch("/update_deck/" + deck_id, {
             method: 'post',
             headers: {
                 'Accept': 'application/json',
