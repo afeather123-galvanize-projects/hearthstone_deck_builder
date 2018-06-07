@@ -13,5 +13,6 @@ module.exports = function(app){
   app.post('/card_comment/:id', card.comment_on_card);
   app.post('/deck_comment/:id', deck.comment_on_deck);
   app.get('/deckbuilder/:id', deck.deck_builder);
+  app.get('/edit_deck/:id', deck.edit_deck);
   app.post('/create_deck', deck.create_deck);
 }
