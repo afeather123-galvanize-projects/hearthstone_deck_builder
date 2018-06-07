@@ -2,17 +2,20 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css">
     <title></title>
   </head>
   <body>
-        <% include ./partials/header %>
-    <form action="/creat_card" method="post">
+  <% include ./partials/header %>
+
+
+    <form class=".pageTitle" action="/create_card" method="post">
       <input type="text"name="type" placeholder="Type">
       <input type="number"name="attack" placeholder="Attack">
       <input type="number"name="health" placeholder="Health">
       <input type="number"name="mana" placeholder="Mana">
       <input type="text"name="description" placeholder="Description">
-
+      <input type="submit">
     </form>
   </body>
 </html>

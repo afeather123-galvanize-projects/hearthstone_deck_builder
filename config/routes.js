@@ -1,6 +1,7 @@
 const user = require("../controllers/user.js")
 const deck = require('../controllers/deck.js')
 const card = require("../controllers/card.js")
+const knex = require('../db/knex');
 
 module.exports = function(app){
   app.get('/', deck.index);
@@ -18,14 +19,32 @@ module.exports = function(app){
   app.get('/edit_deck/:id', deck.edit_deck);
   app.post('/update_deck/:id', deck.update_deck);
   app.post('/create_deck', deck.create_deck);
-  app.post('/creat_card', card.createCard);
-  
+//  app.use(authenticateAdmin);
+  app.get('/create_card', card.new_card);
+  app.post('/create_card', card.createCard);
 }
 
 function authenticateUser(req, res, next){
   if(!req.session.user_id){
-    res.redirect("/");
+    res.redirect("back");
   }else{
     next();
+  }
+}
+
+function authenticateAdmin(req, res, next){
+  if(!req.session.user_id){
+    res.redirect("back");
+  }else{
+    knex('user')
+    .where('id', req.session.user_id)
+    .first()
+    .then(user => {
+      if(user && user.isAdmin) {
+        next();
+      } else {
+        res.redirect("back");
+      }
+    })
   }
 }
