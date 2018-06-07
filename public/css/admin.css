@@ -1,0 +1,15 @@
+.userDel{
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  margin: 12px;
+  width:200px;
+
+}
+#user_search{
+  width: 50%;
+font-size: 16px;
+padding: 12px 20px 12px 40px;
+border: 1px solid #ddd;
+margin: 12px;
+}
