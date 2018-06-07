@@ -1,7 +1,6 @@
 @import "master.css";
 
-.cardComment{
-  border: 1px solid black;
+.cardComment {
   padding:5px;
 }
 .dropdown {
@@ -27,8 +26,9 @@ span {
 }
 .dropdownLinks {
   color: black;
-  padding-top: 10px;
-  padding-left: 10px;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding-left: 20px;
 }
 .pageWrapper {
     display: flex;
@@ -49,4 +49,7 @@ span {
   text-align: center;
   color: white;
   padding: 2%;
+}
+.desc {
+  max-width: 400px;
 }
