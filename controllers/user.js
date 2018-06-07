@@ -10,13 +10,15 @@ module.exports = {
 
       let user = results[0];
       //check user email against database
+      console.log(user);
       if(user === undefined){
         res.redirect('/login');
       //check if user put in correct password
       } else if(user.password == req.body.password){
         req.session.user_id = user.id;
         req.session.save(()=>{
-        res.redirect('/profile');
+          console.log(req.session);
+          res.redirect('/');
         })
         }else{
         res.redirect('/login');

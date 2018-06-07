@@ -2,6 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req,res) => {
+      console.log(req.session);
       knex('deck')
       .select('deck.deck_name', 'deck.desc', 'deck.id AS deck_id', 'class.class_name')
       .join('class','deck.class_id', 'class.id')
@@ -11,6 +12,7 @@ module.exports = {
     },
 
     deck_builder: (req,res) => {
+      console.log(req.session);
       knex('card')
       .where('class_id', req.params.id)
       .orWhere('class_id', 1)
@@ -18,13 +20,33 @@ module.exports = {
       .orderBy('class_id', 'desc')
       .orderBy('mana', 'asc')
       .then(cards => {
-        res.render('deck_builder', {cards: cards})
+        res.render('deck_builder', {cards: cards, class_id: req.params.id})
       })
     },
 
     create_deck: (req,res) => {
-      console.log(req.body);
-      res.redirect('back');
+      console.log(req.session);
+      let deck = {
+        user_id: req.session.user_id,
+        class_id: req.body.class_id,
+        deck_name: req.body.deck_name,
+        desc: req.body.desc
+      }
+      knex('deck')
+      .insert(deck)
+      .returning('id')
+      .then(id => {
+        console.log(id);
+        req.body.list.forEach(card => {
+          card.deck_id = id[0];
+        });
+        knex('deck_card')
+        .insert(req.body.list)
+        .then(() => {
+          res.redirect(`/deck/${id}`);
+        })
+      })
+      
     },
 
     show: (req,res) => {

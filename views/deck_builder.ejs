@@ -99,7 +99,8 @@
       event.stopPropagation();
       let deck_info = {
         deck_name: document.getElementById('deck_name_input').value,
-        desc: document.getElementById('description_input').value
+        desc: document.getElementById('description_input').value,
+        class_id: <%=class_id%>
       }
       let formattedList = [];
       let keys = Object.keys(list);
@@ -119,10 +120,11 @@
         'Accept': 'application/json',
          "Content-type": "application/json"
        },
+       credentials: 'include',
        body: JSON.stringify(deck_info)
       })
       .then(function(data) {
-        console.log('Request succeeded with JSON response', data);
+        window.location.replace(data.url);
       })
       .catch(function(error) {
         console.log('Request failed', error);
