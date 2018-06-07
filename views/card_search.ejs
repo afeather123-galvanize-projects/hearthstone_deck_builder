@@ -26,12 +26,13 @@
   <%for(let i = 0; i < cards.length; i+=12){%>
   <div class="mySlides1">
     <%for(let j = i; j < i+12 && j < cards.length ;j++){%>
-
+      <a href="/card/<%=cards[j].id%>">
       <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy"
       data-cardid="<%=cards[j].id%>"
       data-mana="<%=cards[j].mana%>"
       data-name="<%=cards[j].name%>"
       data-src="<%=cards[j].img%>" alt="">
+      </a>
     <%}%>
         <!-- buttons for prev and next -->
     <a class="prev" onclick="plusSlides(-1,1)" >&#10094;</a>
