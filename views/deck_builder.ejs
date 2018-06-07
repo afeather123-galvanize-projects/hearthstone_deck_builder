@@ -4,9 +4,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/deck_builder.css">
     <title>Hearthstone Deck Builder</title>
+    <link rel="stylesheet" href="/css/deck.css">
     <link rel="stylesheet" href="/css/imageGallery.css">
+    <link rel="stylesheet" href="/css/deck_builder.css">
   </head>
 
   <body>
@@ -37,13 +38,13 @@
   <%}%>
 </div>
 
-<div class="cardAddDiv">
-<ul id="decklist">
-  <%deck_cards.forEach(card => {%>
-    <li data-cardid="<%=card.id%>" data-name="<%=card.name%>" data-qty="<%=card.qty%>" class="deck_card"><%=card.name + ' ' + card.qty%></li>
-  <%})%>
-</ul>
+<ul id="decklist" class="deck_list">
+    <%deck_cards.forEach(card => {%>
+      <li data-cardid="<%=card.id%>" data-name="<%=card.name%>" data-qty="<%=card.qty%>" class="deck_card cardListItem"><%=card.name + ' ' + card.qty%></li>
+    <%})%>
+  </ul>
 
+<div class="cardAddDiv">
 <form action="/create_deck" id="submitDeck">
   <input type="text" name="deck_name" id="deck_name_input" placeholder="Deck Name">
   <textarea name="desc" cols="30" rows="10" id="description_input"></textarea>

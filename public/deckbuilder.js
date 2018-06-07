@@ -57,6 +57,7 @@ function AddCard(event) {
         if (!list[data.cardid].domElement) {
             let li = document.createElement('li');
             li.dataset.cardid = data.cardid;
+            li.classList.add('cardListItem');
             li.addEventListener('contextmenu', RemoveCard);
             let text = document.createTextNode(list[data.cardid].name + ' ' + list[data.cardid].qty);
             li.appendChild(text);
