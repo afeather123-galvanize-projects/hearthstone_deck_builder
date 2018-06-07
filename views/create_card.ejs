@@ -8,8 +8,9 @@
   <body>
     <% include ./partials/header %>
       
-    <form class=".pageTitle" action="/creat_card" method="post">
+    <form class=".pageTitle" action="/create_card" method="post" id="form">
       <input type="text" name="name" placeholder="name">
+      <input type="text" name="img" placeholder="imageURL">
       <select name="class_id" id="">
         <option value="2">Druid</option>
         <option value="3">Hunter</option>
@@ -27,10 +28,11 @@
         <option value="Weapon">Weapon</option>
         <option value="Hero">Hero</option>
       </select>
-      <input type="number"name="attack" placeholder="Attack">
-      <input type="number"name="health" placeholder="Health">
+      <input type="number"name="attack" placeholder="Attack" id="attack">
+      <input type="number"name="health" placeholder="Health" id="health">
       <input type="number"name="mana" placeholder="Mana">
       <input type="text"name="description" placeholder="Description">
+      <input type="submit" value="">
     </form>
 
   <script type="text/javascript" src="/cardCreator.js"> </script>

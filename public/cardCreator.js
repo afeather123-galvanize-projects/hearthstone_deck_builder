@@ -6,19 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('type').addEventListener('change', e => {
         switch(e.target.value) {
-            case 'spell':
+            case 'Spell':
                 health.style.display = 'none';
                 attack.style.display = 'none';
                 break;
-            case 'minion':
+            case 'Minion':
                 health.style.display = 'inline';
                 attack.style.display = 'inline';
                 health.placeholder = 'Health';
                 break;
-            case 'weapon':
+            case 'Weapon':
                 health.style.display = 'inline';
                 attack.style.display = 'inline';
                 health.placeholder = 'Durability';
+            case 'Hero':    
+                health.style.display = 'none';
+                attack.style.display = 'none';
                 break;
         }
     })
