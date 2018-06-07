@@ -1,10 +1,7 @@
 @import "master.css";
-body {
+.pageWrapper {
   text-align: center;
-  width: 100vw;
-  height: 100vh;
 }
-
 h1 {
   font-size: 40px;
   margin-top: 3%;

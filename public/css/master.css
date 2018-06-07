@@ -16,6 +16,16 @@ body {
   width: 100VW;
   border-bottom: 1px solid black;
 }
+.bannerH1 {
+  display: inline-block;
+  font-size: 3em;
+  color: white;
+  transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 0.5em;
+  margin-left: 0.3em;
+  text-transform: capitalize;
+}
 .bannerBorder {
   height: 30px;
   background-color: #7B3919;

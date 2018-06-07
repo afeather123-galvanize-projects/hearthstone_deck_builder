@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="/css/login-register.css">
   </head>
   <body>
+
+
+
     <% include ./partials/header %>
     <div class="bannerBorder">
         <a class="nav" id="leftLink" href="/">Go back</a>
     </div><!--bannerBorder-->
+  <div class="pageWrapper">
     <h1>Login</h1>
     <form action="/login" method="post">
       <input type="email" name="email" placeholder="Email" required>
@@ -25,5 +29,7 @@
       <input type="password" name="confirm" placeholder="Confirm Password" required>
       <input type="submit">
     </form>
+
+   </div><!--pageWrapper-->
   </body>
 </html>
