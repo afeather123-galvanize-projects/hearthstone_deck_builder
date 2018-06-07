@@ -9,6 +9,7 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
+  border: 1px solid black;
 }
 
 /* Next & previous buttons */
@@ -46,10 +47,28 @@ img {vertical-align: middle;}
 
 img {
   display: inline-block;
-  max-width: 30%;
-  max-height:40%;
+  max-width: 100%;
+  max-height:100%;
   width: auto;
   height: auto;
   margin-left: auto;
   margin-right: auto;
+}
+#submitDeck{
+  border: 1px solid black;
+  float:left;
+  padding:25px;
+  overflow: scroll;
+}
+#card_search {
+width: 80%;
+font-size: 16px;
+padding: 12px 20px 12px 40px;
+margin-bottom: 12px;
+}
+input[type='submit']{
+    font-size: 17px;
+    font-weight: bold;
+    margin: auto;
+  
 }

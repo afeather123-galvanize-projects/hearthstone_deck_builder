@@ -14,4 +14,5 @@ module.exports = function(app){
   app.post('/deck_comment/:id', deck.comment_on_deck);
   app.get('/deckbuilder/:id', deck.deck_builder);
   app.post('/create_deck', deck.create_deck);
+  app.get("/card_search", card.search_on_name);
 }

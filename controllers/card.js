@@ -24,7 +24,7 @@ module.exports = {
         res.redirect('/card/' + id[0]);
       })
     },
-    //
+    //comment on a card
     comment_on_card: (req, res) => {
       let new_comment = {
         user_id: req.session.user_id,
@@ -36,6 +36,20 @@ module.exports = {
       .then(() => {
         console.log('getting here?');
         res.redirect('/card/' + req.params.id);
+      })
+    },
+    // card search 
+    search_on_name:(req, res)=>{
+      console.log(req.query);
+      if(!req.query.search) {
+        knex('card')
+        .then(result => {
+          res.render('card_search', {cards:result});          
+        })
+        return;
+      }
+      knex('card').where('name', 'ilike', `${req.query.search}%`).then((result)=>{
+        res.render('card_search', {cards:result});
       })
     }
   }

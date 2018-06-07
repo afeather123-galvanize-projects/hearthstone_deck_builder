@@ -16,12 +16,11 @@
 
     <div class="pageWrapper">
     <h2>Deck Bulider</h2>
-
+    
+<!-- slideshow for deck bulider -->
 <div class="slideshow-container">
-
   <%for(let i = 0; i < cards.length; i+=6){%>
   <div class="mySlides1">
-
     <%for(let j = i; j < i+6 && j < cards.length ;j++){%>
 
       <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy"
@@ -29,9 +28,8 @@
       data-mana="<%=cards[j].mana%>"
       data-name="<%=cards[j].name%>"
       data-src="<%=cards[j].img%>" alt="">
-
     <%}%>
-
+        <!-- buttons for prev and next -->
     <a class="prev" onclick="plusSlides(-1,1)" >&#10094;</a>
     <a class="next" onclick="plusSlides(1,1)" >&#10095;</a>
   </div>

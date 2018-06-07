@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/deck_builder.css">
+    <title>Hearthstone Deck Builder</title>
+    <link rel="stylesheet" href="/css/imageGallery.css">
+  </head>
+
+  <body>
+    <% include ./partials/header %>
+    <div class="bannerBorder">
+    </div><!--bannerBorder-->
+
+    <div class="pageWrapper">
+    <!-- <h2>Card Search</h2> -->
+    <!-- search bar -->
+  <form action="/card_search" method="get">
+    <input id='card_search' type="text" name="search" placeholder="Search...">
+    <input type="submit">
+  </form>
+    
+<!-- slideshow for deck bulider -->
+<div class="slideshow-container">
+  <%for(let i = 0; i < cards.length; i+=12){%>
+  <div class="mySlides1">
+    <%for(let j = i; j < i+12 && j < cards.length ;j++){%>
+
+      <img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" class="b-lazy"
+      data-cardid="<%=cards[j].id%>"
+      data-mana="<%=cards[j].mana%>"
+      data-name="<%=cards[j].name%>"
+      data-src="<%=cards[j].img%>" alt="">
+    <%}%>
+        <!-- buttons for prev and next -->
+    <a class="prev" onclick="plusSlides(-1,1)" >&#10094;</a>
+    <a class="next" onclick="plusSlides(1,1)" >&#10095;</a>
+  </div>
+  <%}%>
+</div>
+
+</div> <!--pageWrapper-->
+<script type="text/javascript" src="/slide.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/blazy/latest/blazy.min.js"></script>
+<script type="text/javascript" src="/blazy.js"></script>
+</body>
+
+</html>
