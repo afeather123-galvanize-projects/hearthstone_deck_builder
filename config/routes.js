@@ -19,7 +19,7 @@ module.exports = function(app){
   app.get('/edit_deck/:id', deck.edit_deck);
   app.post('/update_deck/:id', deck.update_deck);
   app.post('/create_deck', deck.create_deck);
-  app.use(authenticateAdmin);
+//  app.use(authenticateAdmin);
   app.get('/create_card', card.new_card);
   app.post('/create_card', card.createCard);
 }
