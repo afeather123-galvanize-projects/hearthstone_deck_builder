@@ -16,9 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 health.placeholder = 'Health';
                 break;
             case 'Weapon':
+                console.log('Weapon');
                 health.style.display = 'inline';
                 attack.style.display = 'inline';
                 health.placeholder = 'Durability';
+                break;
             case 'Hero':    
                 health.style.display = 'none';
                 attack.style.display = 'none';

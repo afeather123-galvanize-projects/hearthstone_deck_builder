@@ -17,6 +17,10 @@
     <a class="dropdownLinks" href="/deckbuilder/10">Warrior</a>
   </div>
   </div>
+  <%if(username.length === 0) {%>
   <a class="nav" href="/login">Login/Register</a>
   <a class="nav" href="/card_search">Card Search</a>
+  <%} else {%>
+    <a href="#">Hello, <%=username%></a>
+  <%}%>
 </div><!--bannerBorder-->
