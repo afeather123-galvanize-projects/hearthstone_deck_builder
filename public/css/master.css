@@ -48,6 +48,14 @@ body {
   padding-top: 5px;
   font-size: 1.2em;
 }
+.navLeft {
+  text-decoration: none;
+  float: left;
+  padding-left: 25px;
+  color: white;
+  padding-top: 5px;
+  font-size: 1.2em;
+}
 h1 {
   font-size: 2em;
 }
@@ -69,9 +77,7 @@ h3 {
 .pageTitleH1 {
   padding-top: 0.3em;
   padding-left: 1em;
-
 }
-
 .deckRow {
   display: flex;
   flex-direction: row;
@@ -91,17 +97,3 @@ h3 {
   margin: 10px;
   text-align: center;
 }
-
-/* .deckI{
-  width:170px;
-  height: 370px;
-  margin: 15px;
-  float:left;
-  color:gray;
-  padding-bottom:40px;
-} */
-
-/* .desc_background{
-  background: rgba(0, 0, 0, 0.3);
-color: #f1f1f1;
-} */

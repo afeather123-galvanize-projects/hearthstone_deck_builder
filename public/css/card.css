@@ -1,16 +1,20 @@
 @import "master.css";
 
 .cardComment {
-  padding:5px;
+  padding: 5px;
+}
+.bannerBorder {
+  padding-top: 5px;
 }
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 5px;
 }
 span {
   padding-left: 20px;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .dropdown-content {
     display: none;
