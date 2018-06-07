@@ -22,6 +22,8 @@ module.exports = function(app){
 //  app.use(authenticateAdmin);
   app.get('/create_card', card.new_card);
   app.post('/create_card', card.createCard);
+  app.get('/admin', user.admin_remove);
+  app.post('/admin/:id', user.remove_user);
 }
 
 function authenticateUser(req, res, next){
