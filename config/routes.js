@@ -20,7 +20,7 @@ module.exports = function(app){
   app.get('/edit_deck/:id', deck.edit_deck);
   app.post('/update_deck/:id', deck.update_deck);
   app.post('/create_deck', deck.create_deck);
-//  app.use(authenticateAdmin);
+  app.use(authenticateAdmin);
   app.get('/create_card', card.new_card);
   app.post('/create_card', card.createCard);
   app.get('/admin', user.admin_remove);
@@ -55,7 +55,9 @@ function authenticateAdmin(req, res, next){
 function userView(req, res, next) {
   if(req.session.username) {
     res.locals.username = req.session.username;
+    res.locals.isAdmin = req.session.isAdmin;
   } else {
+    res.locals.isAdmin = false;
     res.locals.username = '';
   }
   next();

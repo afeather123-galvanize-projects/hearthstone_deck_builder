@@ -17,10 +17,16 @@
     <a class="dropdownLinks" href="/deckbuilder/10">Warrior</a>
   </div>
   </div>
+
+  <%if(isAdmin) {%>
+    <a href="/create_card" class="nav">Create Card</a>
+    <a href="/admin" class="nav">Manage Users</a>
+  <%}%>
+  
   <%if(username.length === 0) {%>
   <a class="nav" href="/login">Login/Register</a>
-  <a class="nav" href="/card_search">Card Search</a>
   <%} else {%>
-    <a href="#">Hello, <%=username%></a>
+    <a href="#" class="nav">Hello, <%=username%></a>
   <%}%>
+  <a class="nav" href="/card_search">Card Search</a>
 </div><!--bannerBorder-->
