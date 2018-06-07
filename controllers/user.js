@@ -42,6 +42,26 @@ module.exports = {
     }else{
     res.redirect('/')
     }
+  },
+  // search and remove user
+  admin_remove:(req, res)=>{
+    console.log(req.query);
+    if(!req.query.search) {
+      knex('user')
+      .then(result => {
+        res.render('admin', {users:result});          
+      })
+      return;
+    }
+    knex('user').where('username', 'ilike', `${req.query.search}%`).then((result)=>{
+      res.render('admin', {users:result});
+    })
+  },
+  remove_user:(req, res)=>{
+    knex('user').delete().where('id',req.params.id)
+    .then(()=>{
+      res.redirect("/admin");
+    })
   }
 
 }
