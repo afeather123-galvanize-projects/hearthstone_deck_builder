@@ -4,6 +4,7 @@ const card = require("../controllers/card.js")
 const knex = require('../db/knex');
 
 module.exports = function(app){
+  app.use(userView);
   app.get('/', deck.index);
   app.post('/login', user.login);
   app.get('/login', user.login_register);
@@ -49,4 +50,13 @@ function authenticateAdmin(req, res, next){
       }
     })
   }
+}
+
+function userView(req, res, next) {
+  if(req.session.username) {
+    res.locals.username = req.session.username;
+  } else {
+    res.locals.username = '';
+  }
+  next();
 }

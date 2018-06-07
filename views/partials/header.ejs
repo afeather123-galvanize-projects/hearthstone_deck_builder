@@ -1,3 +1,26 @@
 <div class="banner">
-  <h1 class="bannerH1">Hearthstone Card Picker</h1>
+  <h1 class="bannerH1">Hearthstone Deck Builder</h1>
 </div><!--banner-->
+<div class="bannerBorder">
+  <a class="navLeft" href="/">Home</a>
+  <div class="dropdown">
+  <span class="dbList">Deck Builder</span>
+  <div class="dropdown-content">
+    <a class="dropdownLinks" href="/deckbuilder/2">Druid</a>
+    <a class="dropdownLinks" href="/deckbuilder/3">Hunter</a>
+    <a class="dropdownLinks" href="/deckbuilder/4">Mage</a>
+    <a class="dropdownLinks" href="/deckbuilder/5">Paladin</a>
+    <a class="dropdownLinks" href="/deckbuilder/6">Priest</a>
+    <a class="dropdownLinks" href="/deckbuilder/7">Rogue</a>
+    <a class="dropdownLinks" href="/deckbuilder/8">Shaman</a>
+    <a class="dropdownLinks" href="/deckbuilder/9">Warlock</a>
+    <a class="dropdownLinks" href="/deckbuilder/10">Warrior</a>
+  </div>
+  </div>
+  <%if(username.length === 0) {%>
+  <a class="nav" href="/login">Login/Register</a>
+  <a class="nav" href="/card_search">Card Search</a>
+  <%} else {%>
+    <a href="#">Hello, <%=username%></a>
+  <%}%>
+</div><!--bannerBorder-->

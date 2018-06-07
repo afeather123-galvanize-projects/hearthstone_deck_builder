@@ -16,6 +16,7 @@ module.exports = {
       //check if user put in correct password
       } else if(user.password == req.body.password){
         req.session.user_id = user.id;
+        req.session.username = user.username;
         req.session.save(()=>{
           console.log(req.session);
           res.redirect('/');

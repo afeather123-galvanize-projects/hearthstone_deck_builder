@@ -15,13 +15,16 @@ module.exports = {
     //create card
     createCard: (req, res)=>{
       knex('card').insert({
+        name: req.body.name,
         type:req.body.type,
         attack:req.body.attack,
         health:req.body.health,
         mana:req.body.mana,
-        description:req.body.description
+        class_id: Number(req.body.class_id),
+        description: req.body.description,
+        img: req.body.img
       }).returning('id').then((id)=>{
-        res.redirect('/create_card/' + id[0]);
+        res.redirect('/card/' + id[0]);
       })
     },
 
