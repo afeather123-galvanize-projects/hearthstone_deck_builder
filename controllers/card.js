@@ -21,8 +21,12 @@ module.exports = {
         mana:req.body.mana,
         description:req.body.description
       }).returning('id').then((id)=>{
-        res.redirect('/create_card' + id[0]);
+        res.redirect('/create_card/' + id[0]);
       })
+    },
+
+    new_card: (req,res) => {
+      res.render('create_card');
     },
     //comment on a card
     comment_on_card: (req, res) => {
