@@ -9,7 +9,6 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
-  border: 1px solid black;
 }
 
 /* Next & previous buttons */
@@ -70,5 +69,5 @@ input[type='submit']{
     font-size: 17px;
     font-weight: bold;
     margin: auto;
-  
+
 }

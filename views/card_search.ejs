@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/deck_builder.css">
+    <link rel="stylesheet" href="/css/card_search.css">
     <title>Hearthstone Deck Builder</title>
     <link rel="stylesheet" href="/css/imageGallery.css">
   </head>
@@ -10,16 +10,17 @@
   <body>
     <% include ./partials/header %>
     <div class="bannerBorder">
+      <a class="navLeft" href="/">Home</a>
+      <a class="nav" href="/login">Login/Register</a>
     </div><!--bannerBorder-->
 
     <div class="pageWrapper">
-    <!-- <h2>Card Search</h2> -->
     <!-- search bar -->
-  <form action="/card_search" method="get">
+  <form class="searchBar" action="/card_search" method="get">
     <input id='card_search' type="text" name="search" placeholder="Search...">
     <input type="submit">
   </form>
-    
+
 <!-- slideshow for deck bulider -->
 <div class="slideshow-container">
   <%for(let i = 0; i < cards.length; i+=12){%>

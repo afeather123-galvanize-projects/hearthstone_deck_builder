@@ -12,7 +12,9 @@
 <body>
   <% include ./partials/header %>
   <div class="bannerBorder">
-      <a class="nav" href="/login">login/register</a>
+      <a class="navLeft" href="/">Home</a>
+      <a class="nav" href="/login">Login/Register</a>
+      <a class="nav" href="/card_search">Card Search</a>
   </div><!--bannerBorder-->
 
   <div class="pageWrapper">
@@ -30,13 +32,8 @@
       <div class="deck">
         <a class="deckI" href="/deck/<%=decks[i].deck_id%>"><img src="https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png" alt=""></a>
 
-        <!-- <div class="desc_background">
-          <p class="desc_landing"><%= decks[i].desc%></p>
-        </div> -->
-
       </div><!--deck-->
     </div><!--deckDiv-->
-
 
       <%}%>
       <!--deck-->
