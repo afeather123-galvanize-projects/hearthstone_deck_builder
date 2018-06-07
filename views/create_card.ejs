@@ -11,13 +11,31 @@
     </div><!--bannerBorder-->
       
     <form class=".pageTitle" action="/creat_card" method="post">
-      <input type="text"name="type" placeholder="Type">
+      <input type="text" name="name" placeholder="name">
+      <select name="class_id" id="">
+        <option value="2">Druid</option>
+        <option value="3">Hunter</option>
+        <option value="4">Mage</option>
+        <option value="5">Paladin</option>
+        <option value="6">Priest</option>
+        <option value="7">Rogue</option>
+        <option value="8">Shaman</option>
+        <option value="9">Warlock</option>
+        <option value="10">Warrior</option>    
+      </select>
+      <select name="Type" id="type">
+        <option value="Minion">Minion</option>
+        <option value="Spell">Spell</option>
+        <option value="Weapon">Weapon</option>
+        <option value="Hero">Hero</option>
+      </select>
       <input type="number"name="attack" placeholder="Attack">
       <input type="number"name="health" placeholder="Health">
       <input type="number"name="mana" placeholder="Mana">
       <input type="text"name="description" placeholder="Description">
-      <input type="submit">
-      
+      <input type="submit">  
     </form>
+
+  <script type="text/javascript" src="/cardCreator.js"> </script>
   </body>
 </html>
