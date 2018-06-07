@@ -3,36 +3,29 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/admin.css">
     <title>Admin</title>
   </head>
   <body>
     <% include ./partials/header %>
-    <div class="bannerBorder">
-    </div><!--bannerBorder-->
+  
     
     <div class="pageWrapper">
-      <form class="searchBar" action="/admin" method="get">
+      <form class="search" action="/admin" method="get">
         <input id='user_search' type="text" name="search" placeholder="Search for user">
         <input type="submit">
       </form>
       
+      
       <%for(let i =0; i< users.length; i++){%>
+        <div class="userDel">
         <form action="/admin/<%=users[i].id%>" method="post">
           <h3> <%=users[i].username%> </h3>
-          <input type="submit" value="Delete">
+          <h2><%=users[i].email%></h2>
+          <input class="del" type="submit" value="Delete">
         </form>
-      
-      
-      <!-- <a href="/admin">Remove</a> -->
+      </div>
       <%}%>
-      
-    <!-- <form class=".pageTitle" action="/creat_card" method="post">
-      <input type="text"name="type" placeholder="Type">
-      <input type="number"name="attack" placeholder="Attack">
-      <input type="number"name="health" placeholder="Health">
-      <input type="number"name="mana" placeholder="Mana">
-      <input type="text"name="description" placeholder="Description">
-      <input type="submit"> -->
       
     </form>
     </div>
