@@ -11,6 +11,7 @@
 <body>
     <% include ./partials/header %>
     <div class="bannerBorder">
+      <a class="navLeft" href="/">Home</a>
       <div class="dropdown">
       <span>Card Class</span>
       <div class="dropdown-content">
@@ -39,17 +40,30 @@
     <div class="cardInfoDiv">
       <h1>Card Name: <%=card.name%></h1>
       <h3>Card Type: <%=card.type%></h3>
+
+      <!-- leave field blank if there isn't any attack -->
+      <% if(card.attack !== null){ %>
       <h3>Attack Power: <%=card.attack%></h3>
-      <h3>Health: <%=card.health%></h3>
+      <% } %>
+
+      <!-- leave field blank if there isn't any health OR change the description if the card is a wreapon -->
+      <% if(card.health !== null){ %>
+        <% if(card.type === 'Weapon'){ %>
+          <h3>Durability: <%=card.health%></h3>
+          <% } else {%>
+          <h3>Health: <%=card.health%></h3>
+        <% } %>
+        <% } %>
+
       <h3>Mana: <%=card.mana%></h3>
     <% let desc = card.description%>
-      <h3>Card Description:</h3>
-      <p><%- desc %> </p>
+      <h3 >Card Description:</h3>
+      <p class="desc"><%- desc %> </p>
 
       <% card_comments.forEach(comment => {%>
         <div class="cardComment">
           <h4><%=comment.username%></h4>
-          <p><%=comment.comment%></p>
+          <p class="desc"><%=comment.comment%></p>
         </div>
       <%})%>
 

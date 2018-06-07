@@ -12,7 +12,6 @@ module.exports = {
     },
 
     deck_builder: (req,res) => {
-      console.log(req.session);
       knex('card')
       .where('class_id', req.params.id)
       .orWhere('class_id', 1)
@@ -20,8 +19,36 @@ module.exports = {
       .orderBy('class_id', 'desc')
       .orderBy('mana', 'asc')
       .then(cards => {
-        res.render('deck_builder', {cards: cards, class_id: req.params.id})
+        res.render('deck_builder', {cards: cards, class_id: req.params.id, deck_cards: []})
       })
+    },
+
+    edit_deck: (req,res) => {
+      console.log(req.session.user_id);
+      knex('deck')
+      .where('id', req.params.id)
+      .first()
+      .then(deck => {
+        if(req.session.user_id !== deck.user_id) {
+          res.redirect(`/deck/${req.params.id}`)
+          return;
+        }
+        knex('card')
+        .where('class_id', deck.class_id)
+        .orWhere('class_id', 1)
+        .select('img', 'id', 'name', 'mana')
+        .orderBy('class_id', 'desc')
+        .orderBy('mana', 'asc')
+        .then(cards => {
+          knex('deck_card')
+          .where('deck_id', req.params.id)
+          .join('card', 'card.id', 'deck_card.card_id')
+          .then(deck_cards => {
+            res.render('edit_deck', {cards: cards, class_id: req.params.id, deck_cards: deck_cards})
+          })
+        })
+      })
+      
     },
 
     create_deck: (req,res) => {
@@ -47,6 +74,12 @@ module.exports = {
         })
       })
       
+    },
+
+    update_deck: (req,res) => {
+      knex('deck_card')
+      .delete()
+      .where('deck_id', )
     },
 
     show: (req,res) => {

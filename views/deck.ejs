@@ -9,36 +9,63 @@
   <body>
     <% include ./partials/header %>
     <div class="bannerBorder">
-        <a class="nav" href="/login">login/register</a>
+      <a class="navLeft" href="/">Home</a>
+      <a class="navLeft" href="/deckbuilder/<%=deck.id%>">Deck Builder</a>
     </div><!--bannerBorder-->
+
+<div class="pageWrapper">
+
+  <div class="leftDiv">
+    <div class="deckInfoDiv">
+
 
     <div class="description">
       <%console.log(deck)%>
-      <h1><%=deck.deck_name%></h1>
-      <p><%=deck.desc%></p>
-    </div>
-    <%console.log(cards)%>
-    <div class="deck_list">
-        <% cards.forEach(card => { %>
-          <div>
-            <span>Mana: <%=card.mana%></span>
-            <a class="card" href="/card/<%=card.id%>"><%=card.name%></a>
-            <span><%=card.qty%></span>
-          </div>
-        <%})%>
+      <h1>Deck Name:<br> <%=deck.deck_name%></h1>
+      <p>Description:<br><%=deck.desc%></p>
     </div>
 
     <div class="commentsSection">
       <%comments.forEach(comment => {%>
-        <h4><%=comment.username%></h4>
-        <p><%=comment.comment%></p>
+        <h4>Username:<%=comment.username%></h4>
+        <p class="desc"><%=comment.comment%></p>
       <%})%>
     </div>
 
     <form action="/deck_comment/<%=deck.id%>" method="POST">
-      <textarea name="comment" id="" cols="30" rows="10"></textarea>
+      <textarea name="comment" cols="50" rows="8"></textarea><br>
       <button>Submit</button>
     </form>
+
+  </div>
+  <!-- deckInfoDiv -->
+  </div>
+  <!-- leftDiv -->
+
+  <div class="rightDiv">
+    <div class="deck">
+    <h1 class="deckH1">Deck List</h1>
+    </div>
+
+
+    <div class="deck_list">
+        <ul>
+          <li>Qty Mana Card Name</li>
+        <% cards.forEach(card => { %>
+            <li class="cardListItem">
+            <span class="cardQty"><%=card.qty%></span>
+            <span class="cardMana"><%=card.mana%></span>
+            <a class="card" href="/card/<%=card.id%>"><%=card.name%></a>
+            </li>
+        <%})%>
+        </ul>
+    </div>
+    <!-- deck_list -->
+  </div>
+  <!-- rightDiv -->
+
+</div>
+<!-- pageWrapper -->
 
   </body>
 </html>
