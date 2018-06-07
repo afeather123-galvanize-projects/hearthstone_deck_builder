@@ -37,6 +37,7 @@
   <%}%>
 </div>
 
+<div class="cardAddDiv">
 <ul id="decklist">
   <%deck_cards.forEach(card => {%>
     <li data-cardid="<%=card.id%>" data-name="<%=card.name%>" data-qty="<%=card.qty%>" class="deck_card"><%=card.name + ' ' + card.qty%></li>
@@ -44,10 +45,11 @@
 </ul>
 
 <form action="/create_deck" id="submitDeck">
-  <input type="text" name="deck_name" id="deck_name_input">
+  <input type="text" name="deck_name" id="deck_name_input" placeholder="Deck Name">
   <textarea name="desc" cols="30" rows="10" id="description_input"></textarea>
   <button>Submit</button>
 </form>
+</div>
 
 </div> <!--pageWrapper-->
 <script>
