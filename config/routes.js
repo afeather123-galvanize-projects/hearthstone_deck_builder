@@ -53,7 +53,9 @@ function authenticateAdmin(req, res, next){
 function userView(req, res, next) {
   if(req.session.username) {
     res.locals.username = req.session.username;
+    res.locals.isAdmin = req.session.isAdmin;
   } else {
+    res.locals.isAdmin = false;
     res.locals.username = '';
   }
   next();
