@@ -16,6 +16,16 @@ body {
   width: 100VW;
   border-bottom: 1px solid black;
 }
+.bannerH1 {
+  display: inline-block;
+  font-size: 3em;
+  color: white;
+  transform: perspective(2.5em) rotateX(15deg) scaleY(0.8);
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 0.5em;
+  margin-left: 0.3em;
+  text-transform: capitalize;
+}
 .bannerBorder {
   height: 30px;
   background-color: #7B3919;
@@ -44,27 +54,54 @@ h1 {
 h3 {
   font-size: 1.5em;
 }
+.pageTitle {
+  margin-top: 20px;
+  width: 250px;
+  border-radius: 25px;
+  height: 50px;
+  color: white;
+  background-color: #7B3919;
+  border: 1px solid black;
+  -webkit-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+  -moz-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+  box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
+}
+.pageTitleH1 {
+  padding-top: 0.3em;
+  padding-left: 1em;
 
-.deck{ 
+}
+
+.deckRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.deck {
   /* background-image: url("https://media-hearth.cursecdn.com/attachments/39/669/cardback_5.png"); */
   /* background-image: url("https://pre00.deviantart.net/c37a/th/pre/i/2014/079/c/8/hearthstone_card_back_fan_art_by_d1eselxxxx-d7axngs.jpg"); */
   background-repeat: no-repeat;
   margin: 0 auto;
-  margin-top: 15px;
-  width: 230px;
-  height: 325px;
-  padding: 35px;
+  /* margin-top: 5px; */
+  width: 270px;
+  height: 380px;
+  padding: 5px;
+}
+.deck_name {
+  margin: 10px;
+  text-align: center;
 }
 
-.deckI{
-  width:180px;
+/* .deckI{
+  width:170px;
+  height: 370px;
   margin: 15px;
   float:left;
   color:gray;
-  padding-bottom:70px;
-}
+  padding-bottom:40px;
+} */
 
-.desc_background{
-  /* background: rgba(0, 0, 0, 0.3); */
+/* .desc_background{
+  background: rgba(0, 0, 0, 0.3);
 color: #f1f1f1;
-}
+} */
