@@ -10,11 +10,22 @@ module.exports = function(app){
   app.post('/card/:id',card.createCard);
   app.get('/card/:id',card.show);
   app.get('/deck/:id', deck.show);
+  app.get("/card_search", card.search_on_name);
+  app.use(authenticateUser);
   app.post('/card_comment/:id', card.comment_on_card);
   app.post('/deck_comment/:id', deck.comment_on_deck);
   app.get('/deckbuilder/:id', deck.deck_builder);
   app.get('/edit_deck/:id', deck.edit_deck);
   app.post('/update_deck/:id', deck.update_deck);
   app.post('/create_deck', deck.create_deck);
-  app.get("/card_search", card.search_on_name);
+  app.post('/creat_card', card.createCard);
+  
+}
+
+function authenticateUser(req, res, next){
+  if(!req.session.user_id){
+    res.redirect("/");
+  }else{
+    next();
+  }
 }
