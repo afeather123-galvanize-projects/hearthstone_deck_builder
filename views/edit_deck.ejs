@@ -45,7 +45,7 @@
   <div class="list">
     <ul id="decklist" class="deck_list">
       <%deck_cards.forEach(card => {%>
-        <li data-cardid="<%=card.id%>" data-name="<%=card.name%>" data-qty="<%=card.qty%>" class="deck_card cardListItem"><%=card.qty + card.name%></li>
+        <li data-cardid="<%=card.id%>" data-name="<%=card.name%>" data-qty="<%=card.qty%>" class="deck_card cardListItem"><%=card.qty + ' ' + card.name%></li>
       <%})%>
     </ul>
   </div>
@@ -54,8 +54,8 @@
 <div class="cardAddDiv">
   <h2>Save Deck</h2>
 <form action="/create_deck" id="submitDeck">
-  <input type="text" name="deck_name" id="deck_name_input" placeholder="Deck Name">
-  <textarea name="desc" cols="30" rows="10" id="description_input"></textarea>
+  <input type="text" name="deck_name" id="deck_name_input" placeholder="Deck Name" value="<%=deck.deck_name%>">
+  <textarea name="desc" cols="30" rows="10" id="description_input"><%=deck.desc%></textarea>
   <button>Submit</button>
 </form>
 </div>
@@ -64,7 +64,7 @@
 </div> <!--pageWrapper-->
 <script>
   var class_id = <%=class_id%>;
-  var deck_id = <%=deck_id%>;
+  var deck_id = <%=deck.id%>;
 </script>
 <script type="text/javascript" src="/deckbuilder.js"></script>
 <script type="text/javascript" src="/edit_deck.js"></script>

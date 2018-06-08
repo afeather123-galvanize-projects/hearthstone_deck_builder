@@ -45,9 +45,11 @@
 
       <% card_comments.forEach(comment => {%>
         <div class="cardComment">
-          <h4><%=comment.username%></h4>
-          <p class="desc"><%=comment.comment%></p>
-        </div>
+          <div class="comment">
+              <h4><%=comment.username%></h4>
+              <p class="desc"><%=comment.comment%></p>    
+          </div>
+          </div>
       <%})%>
 
       <form action="/card_comment/<%=card.id%>" method="POST">

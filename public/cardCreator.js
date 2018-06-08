@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 attack.style.display = 'none';
                 break;
             case 'Minion':
-                health.style.display = 'inline';
-                attack.style.display = 'inline';
+                health.style.display = 'block';
+                attack.style.display = 'block';
                 health.placeholder = 'Health';
                 break;
             case 'Weapon':
                 console.log('Weapon');
-                health.style.display = 'inline';
-                attack.style.display = 'inline';
+                health.style.display = 'block';
+                attack.style.display = 'block';
                 health.placeholder = 'Durability';
                 break;
             case 'Hero':    

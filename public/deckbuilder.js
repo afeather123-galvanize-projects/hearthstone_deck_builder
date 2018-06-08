@@ -59,7 +59,7 @@ function AddCard(event) {
             li.dataset.cardid = data.cardid;
             li.classList.add('cardListItem');
             li.addEventListener('contextmenu', RemoveCard);
-            let text = document.createTextNode(list[data.cardid].name + ' ' + list[data.cardid].qty);
+            let text = document.createTextNode(list[data.cardid].qty + ' ' + list[data.cardid].name);
             li.appendChild(text);
             decklist.appendChild(li);
             list[data.cardid].domElement = li;

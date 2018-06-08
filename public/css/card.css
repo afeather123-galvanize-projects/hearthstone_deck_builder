@@ -29,3 +29,8 @@
 .desc {
   max-width: 400px;
 }
+
+.comment {
+  background-color: #dbcbac;
+  color: black;
+}

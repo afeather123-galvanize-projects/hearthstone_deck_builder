@@ -14,16 +14,24 @@ module.exports = {
     },
     //create card
     createCard: (req, res)=>{
-      knex('card').insert({
+      let card = {
         name: req.body.name,
-        type:req.body.type,
+        type:req.body.Type,
         attack:req.body.attack,
         health:req.body.health,
         mana:req.body.mana,
         class_id: Number(req.body.class_id),
         description: req.body.description,
         img: req.body.img
-      }).returning('id').then((id)=>{
+      };
+      if(card.attack === '') {
+        card.attack = null;
+      }
+      
+      if(card.health === '') {
+        card.health = null;
+      }
+      knex('card').insert(card).returning('id').then((id)=>{
         res.redirect('/card/' + id[0]);
       })
     },

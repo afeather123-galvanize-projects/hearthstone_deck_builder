@@ -44,7 +44,7 @@ module.exports = {
           .where('deck_id', req.params.id)
           .join('card', 'card.id', 'deck_card.card_id')
           .then(deck_cards => {
-            res.render('edit_deck', {cards: cards, class_id: req.params.id, deck_cards: deck_cards, deck_id: req.params.id})
+            res.render('edit_deck', {cards: cards, class_id: req.params.id, deck_cards: deck_cards, deck: deck})
           })
         })
       })
