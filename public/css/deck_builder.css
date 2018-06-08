@@ -8,7 +8,8 @@
 .cardAddDiv {
   border-radius: 20px;
   margin-left: 50px;
-  width: 300px;
+  width: 15vw;
+  height: auto;
   padding: 20px;
   background-color: #7B3919;
   border: 1px solid black;
@@ -18,20 +19,21 @@
 }
 .row {
   display: flex;
+  width: auto;
 }
 .deck_list {
   padding-left: 20px;
   padding-top: 10px;
   color: white;
-  width: 300px;
-  height: 220px;
   font-size: 1.3em;
-  overflow: scroll;
+  width: 15vw;
+  height: 80vh;
   background-color: #7B3919;
   border: 1px solid black;
   -webkit-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
   -moz-box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
   box-shadow: 0px 11px 21px 0px rgba(0,0,0,0.47);
 }
-#decklist.deck_card:nth-child(even) {
-  background-color: #ffffff;
+.cardListItem:nth-child(even) {
+  background-color: rgb(163, 105, 76);
+}

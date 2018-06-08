@@ -71,3 +71,8 @@
   padding-right: 15px;
   border-right: 2px solid #66280b;
 }
+
+.comment {
+  background-color: #dbcbac;
+  color: black;
+}

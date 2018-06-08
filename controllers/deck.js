@@ -116,7 +116,13 @@ module.exports = {
           .where('deck_id', req.params.id)
           .join('user', 'deck_comment.user_id', 'user.id')
           .then(comments => {
-            res.render('deck', {deck: deck, cards: cards, comments: comments})
+            let isCreator;
+            if(deck.user_id === req.session.user_id) {
+              isCreator = true;
+            } else {
+              isCreator = false;
+            }
+            res.render('deck', {deck: deck, cards: cards, comments: comments, isCreator: isCreator})
           })
         })
       })

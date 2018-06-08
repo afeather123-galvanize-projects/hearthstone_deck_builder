@@ -17,16 +17,24 @@
 
     <div class="description">
       <%console.log(deck)%>
-      <h1>Deck Name:<br> <%=deck.deck_name%></h1>
+      <h1><%=deck.deck_name%></h1>
+      <%if(isCreator) {%>
+        <a href="/edit_deck/<%=deck.id%>">Edit Deck</a>
+      <%}%>
       <p>Description:<br><%=deck.desc%></p>
     </div>
 
     <div class="commentsSection">
       <%comments.forEach(comment => {%>
-        <h4>Username:<%=comment.username%></h4>
-        <p class="desc"><%=comment.comment%></p>
+        <div class="comment">
+            <hr>
+            <h4>Username:<%=comment.username%></h4>
+            <p class="desc"><%=comment.comment%></p>
+        </div>
       <%})%>
     </div>
+
+    <br>
 
     <form action="/deck_comment/<%=deck.id%>" method="POST">
       <textarea name="comment" cols="50" rows="8"></textarea><br>
